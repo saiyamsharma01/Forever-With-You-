@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}About Us | Forever With You 💖{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header" style="background: linear-gradient(135deg, #fff0f6, #fff) !important;">
+    <div class="container text-center animate-fade-up">
+        <h1 class="hero-headline">About The Goddess</h1>
+        <p class="hero-subtext">And the lucky guy who managed to trick her into dating him. 🎩✨</p>
+    </div>
+</div>
+
+<section class="section-padding about-content">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text animate-on-scroll">
+                <h2>How did this happen?</h2>
+                <div class="divider" style="margin: 1.5rem 0;"></div>
+                <p>Honestly? Science still can't explain why someone as absolutely stunning, intelligent, and funny as you would give me the time of day. But hey, no take-backs! 🏃‍♂️💨</p>
+                <br>
+                <p>Every single day with you is an adventure. From trying to decide where to eat for 45 minutes, to laughing so hard our stomachs hurt, you are the absolute best part of my life.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Out of my league</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Hours spent waiting for you to get ready</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Dynamic Random Image or Placeholder for About Page -->
+            <div class="about-image animate-on-scroll delay-2">
+                <div class="image-frame" style="transform: rotate(3deg); padding: 1.5rem; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <img src="/static/images/1.jpg" alt="About Image" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a831614a?auto=format&fit=crop&q=80&w=800'">
+                    <p style="text-align:center; font-family: 'Playfair Display'; margin-top: 1rem; font-style: italic; font-size: 1.2rem; color: var(--accent-primary);">"Yep, still obsessed."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

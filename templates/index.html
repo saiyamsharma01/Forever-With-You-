@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Forever With You 💖 | Home{% endblock %}
+
+{% block content %}
+<!-- Premium Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-fade-up">
+        <span class="eyebrow">To My Favorite Person...</span>
+        <h1 class="hero-headline">The Best Girlfriend in the Universe 🌌</h1>
+        <p class="hero-subtext">...And the only person who can tolerate me for this long. You seriously deserve a medal, or at least some pizza. 🍕</p>
+        <div class="hero-cta">
+            <a href="/gallery" class="btn-solid">See Us Being Cute <i class="fas fa-heart"></i></a>
+            <a href="#interactive-fun" class="btn-outline-light">Click For a Surprise</a>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline / Highlights Section -->
+<section class="timeline-section section-padding">
+    <div class="container text-center animate-on-scroll">
+        <h2 class="section-title">Why I'm Obsessed With You</h2>
+        <div class="divider"></div>
+        <p class="section-description">A scientifically proven list of facts about why you are stuck with me.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll delay-1">
+                <div class="icon-wrapper icon-floating"><i class="fas fa-laugh-squint"></i></div>
+                <h3>Endless Laughter</h3>
+                <p>Even if 50% of the time it's just me laughing at my own terribly unfunny jokes. But you smile, and that counts!</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-2">
+                <div class="icon-wrapper icon-floating"><i class="fas fa-hand-holding-medical"></i></div>
+                <h3>My Personal Therapist</h3>
+                <p>Who patiently listens to all my rants and accepts payment in the form of food, cuddles, and back rubs.</p>
+            </div>
+            <div class="feature-card animate-on-scroll delay-3">
+                <div class="icon-wrapper icon-floating"><i class="fas fa-star"></i></div>
+                <h3>Stunning Aesthetics</h3>
+                <p>Seriously, how are you this stunning inside and out? It's honestly unfair to the rest of the human race.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Question Section (Funny Animation) -->
+<section id="interactive-fun" class="fun-section py-padding dark-bg" style="padding: 6rem 0; overflow: hidden;">
+    <div class="container text-center">
+        <h2 class="section-title text-light" style="margin-bottom: 2rem;">Quick Question...</h2>
+        <div class="interactive-box animate-on-scroll" style="position: relative;">
+            <h3 style="color: var(--text-primary); font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 3rem;">Are you mad at me right now? 🥺</h3>
+            <div class="funny-buttons-container" style="position: relative; height: 120px;">
+                <button id="btn-no" class="btn-solid btn-pulse" style="position: absolute; left: 35%; transform: translateX(-50%); background:#10b981; border:none; z-index: 10;">No, I love you! ❤️</button>
+                <button id="btn-yes" class="btn-solid" style="position: absolute; left: 65%; transform: translateX(-50%); background:#ef4444; border:none; z-index: 9;">Yes, very. 😡</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Notes Section (Fetched from API via JS) -->
+<section class="testimonials-section section-padding" style="background-color: var(--bg-tertiary);">
+    <div class="container animate-on-scroll">
+        <h2 class="section-title text-center">Random Facts & Confessions</h2>
+        <div class="divider"></div>
+        <div class="notes-carousel" id="notesContainer">
+            <!-- JS inserts notes here -->
+            <p class="loading-text text-center">Loading all the reasons I love you...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section section-padding">
+    <div class="container text-center animate-on-scroll">
+        <h2 class="section-title">Cravings & Special Delivery 🍕💖</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">Select what you need right now, and I'll be notified automatically on WhatsApp!</p>
+        <form class="contact-form">
+            <select class="form-input" id="cravingType" required>
+                <option value="" disabled selected>What do you need right now? 👇</option>
+                <option value="🍕 Pizza / Fast Food">🍕 Pizza / Fast Food</option>
+                <option value="🧋 Boba / Coffee">🧋 Boba / Coffee</option>
+                <option value="🍫 Chocolates / Sweets">🍫 Chocolates / Sweets</option>
+                <option value="🫂 Just a Hug / Cuddles">🫂 Just a Hug / Cuddles</option>
+                <option value="😡 You need to apologize ASAP">😡 You need to apologize ASAP</option>
+                <option value="✨ Other (Specify below)">✨ Other (Specify below)</option>
+            </select>
+            <input type="text" id="senderName" placeholder="Your current mood? (e.g., Hangry, Happy, Bossy)" class="form-input" required>
+            <textarea id="funnyDemands" placeholder="Elaborate on your demands... (Where to deliver, what size?)" class="form-input textarea" required></textarea>
+            <button type="submit" class="btn-solid btn-full">Send Directly to My WhatsApp 📲</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

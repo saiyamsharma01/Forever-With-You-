@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Our Memories | Forever With You 💖{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header" style="background: linear-gradient(135deg, var(--accent-light), #fff) !important;">
+    <div class="container text-center animate-fade-up">
+        <h1 class="hero-headline">The Evidence File 📸</h1>
+        <p class="hero-subtext">A beautifully curated selection of our finest, most embarrassing, and cutest moments together.</p>
+    </div>
+</div>
+
+<!-- Premium Gallery Section -->
+<section class="gallery-page-section section-padding">
+    <div class="container">
+        <!-- JS fills this dynamically from your static images -->
+        <div class="masonry-grid" id="masonryGallery">
+            <p class="loading-text text-center" style="grid-column: 1/-1;">Extracting high-resolution memories without your permission...</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

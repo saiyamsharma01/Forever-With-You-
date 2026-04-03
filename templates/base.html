@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>{% block title %}Forever With You 💖{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Professional Navbar -->
+    <nav class="premium-nav">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">Forever<span>WithYou</span> 💖</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/gallery">Memories</a></li>
+                <li><a href="/#contact" class="btn-outline">Apology Box (JK)</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="premium-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2 class="footer-logo">Forever<span>WithYou</span></h2>
+                <p>Designed to publicly declare how much I love you (and get bonus boyfriend points). 💕</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home Base</a></li>
+                    <li><a href="/about">The Real Story</a></li>
+                    <li><a href="/gallery">Embarrassing Pics</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Stalk Me (More)</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-pizza-slice"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Best Boyfriend Inc. All rights reserved.</p>
+            <p class="developer-credit">Handcrafted with ❤️ & 😭 by <strong>Saiyam</strong></p>
+        </div>
+    </footer>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
