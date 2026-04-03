@@ -1,8 +1,37 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect & Mobile Menu Toggle
     const navbar = document.querySelector('.premium-nav');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (hamburger) {
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -111,19 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNo = document.getElementById('btn-no');
 
     if (btnYes) {
-        btnYes.addEventListener('mouseover', function(e) {
-            // Random movement logic to run away
-            const containerMaxX = 250;
-            const containerMaxY = 100;
+        const moveButton = (e) => {
+            if(e.cancelable) e.preventDefault();
+            // Random movement logic to run away (smaller radius on mobile)
+            const containerMaxX = window.innerWidth < 768 ? 100 : 250;
+            const containerMaxY = window.innerWidth < 768 ? 150 : 100;
             
             const randomX = Math.floor(Math.random() * containerMaxX * 2) - containerMaxX;
             const randomY = Math.floor(Math.random() * containerMaxY * 2) - containerMaxY;
             
             btnYes.style.transform = `translate(calc(-50% + ${randomX}px), ${randomY}px)`;
             
-            const funnyTexts = ["Can't click me!", "Nope!", "Haha too slow!", "Not an option!", "Try again!"];
+            const funnyTexts = ["Can't click me!", "Nope!", "Haha too slow!", "Touch me if u can!", "Try again!"];
             btnYes.innerText = funnyTexts[Math.floor(Math.random() * funnyTexts.length)];
-        });
+        };
+
+        btnYes.addEventListener('mouseover', moveButton);
+        btnYes.addEventListener('touchstart', moveButton, {passive: false});
         
         btnYes.addEventListener('click', function(e) {
             e.preventDefault();
